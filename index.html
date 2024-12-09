@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A S T R O</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/astro-logo.jpg">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">ASTRO</div>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Testimonios</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#"><i class="fas fa-search"></i></a></li>
+                <li><a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
+         </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>ASTRO</h1>
+            <p>La mejor marca de gorras de calidad</p>
+            <button>Comprar Ahora</button>
+        </div>
+    </section>
+
+    <section id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="product-container">
+            <div class="producto" data-name="Gorra Negra Clásica" data-price="35.00" data-img="img/gorraa.jpg">
+                <img src="img/gorra-negro.png" alt="Gorra Negra Clásica">
+                <h3>Gorra Negra Clásica</h3>
+                <p>S/35.00</p>
+                <button class="btn-comprar">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-name="Gorra Blanca" data-price="45.00" data-img="img/gorraa.jpg">
+                <img src="img/gorra-minimalista.png" alt="Gorra Blanca">
+                <h3>Gorra Blanca</h3>
+                <p>S/45.00</p>
+                <button class="btn-comprar">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-name="Gorra Deportiva Gris" data-price="55.00" data-img="img/gorraa.jpg">
+                <img src="img/gorra-roja.png" alt="Gorra Deportiva Gris">
+                <h3>Gorra Deportiva Gris</h3>
+                <p>S/55.00</p>
+                <button class="btn-comprar">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una marca enfocada en ofrecer gorras de la más alta calidad. Cada gorra está diseñada para combinar estilo y funcionalidad.</p>
+    </section>
+
+    <section id="testimonios">
+        <h2>Testimonios</h2>
+        <div class="testimonio-container">
+            <div class="testimonio">
+                <p>"Las mejores gorras que he usado, ¡calidad y estilo!" - Juan Pérez</p>
+            </div>
+            <div class="testimonio">
+                <p>"Una marca que realmente cuida los detalles. Recomendada 100%." - María García</p>
+            </div>
+            <div class="testimonio">
+                <p>"Me encanta cómo se ven y la comodidad es insuperable." - Carlos López</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contáctanos</h2>
+        <p>Envíanos un mensaje a <strong>contacto@astro.com</strong> o llámanos al <strong>(+51) 938-807-320</strong>.</p>
+    </section>
+
+    <footer>
+        <p>© 2024 ASTRO - Todos los derechos reservados</p>
+        <ul class="social-links">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </footer>
+
+    <!-- Panel del Carrito -->
+    <div id="carrito-panel" class="carrito-oculto">
+        <div class="carrito-header">
+            <h2>Tu Carrito</h2>
+            <span id="cerrar-carrito">&times;</span>
+        </div>
+        <div id="carrito-items">
+            <!-- Productos añadidos aparecerán aquí -->
+        </div>
+        <div class="carrito-footer">
+            <p>Total: <span id="carrito-total">S/0.00</span></p>
+            <button id="checkout">Pagar</button>
+        </div>
+    </div>      
+
+    <script src="script.js"></script>
+    <script src="redi-payment.js"></script>
+
+</body>
+</html>
