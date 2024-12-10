@@ -32,10 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartCount();
     }
 
-    // Función para añadir un producto al carrito en la interfaz
     function agregarProductoAlCarritoUI(producto) {
         const item = document.createElement('div');
         item.classList.add('carrito-item');
+        
+        // Verificar que el subtotal esté correctamente definido
+        if (producto.subtotal === undefined) {
+            producto.subtotal = producto.price * producto.cantidad; // Inicializar subtotal si no está definido
+        }
+   
         item.innerHTML = `
             <img src="${producto.img}" alt="${producto.name}" class="carrito-img">
             <div>
@@ -50,50 +55,51 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         carritoItems.appendChild(item);
-
+        
         // Lógica para incrementar, decrementar y eliminar
         const incrementarBtn = item.querySelector('.incrementar');
         const decrementarBtn = item.querySelector('.decrementar');
         const cantidadElement = item.querySelector('.cantidad');
         const subtotalElement = item.querySelector('.subtotal');
         const eliminarBtn = item.querySelector('.eliminar');
-
+   
         incrementarBtn.addEventListener('click', () => {
             producto.cantidad++;
             producto.subtotal = producto.price * producto.cantidad; // Actualizar subtotal
             cantidadElement.innerText = producto.cantidad;
             subtotalElement.innerText = producto.subtotal.toFixed(2);
-
+   
             guardarCarrito(); // Guardar en localStorage
             actualizarTotal();
             updateCartCount();
         });
-
+   
         decrementarBtn.addEventListener('click', () => {
             if (producto.cantidad > 1) {
                 producto.cantidad--;
                 producto.subtotal = producto.price * producto.cantidad; // Actualizar subtotal
                 cantidadElement.innerText = producto.cantidad;
                 subtotalElement.innerText = producto.subtotal.toFixed(2);
-
+   
                 guardarCarrito(); // Guardar en localStorage
                 actualizarTotal();
                 updateCartCount();
             }
         });
-
+   
         eliminarBtn.addEventListener('click', () => {
             carrito = carrito.filter(item => item.name !== producto.name);
             item.remove();
             guardarCarrito(); // Guardar en localStorage
             actualizarTotal();
             updateCartCount();
-
+   
             if (carrito.length === 0) {
                 carritoPanel.classList.remove('active');
             }
         });
     }
+   
 
     // Manejo del evento de añadir al carrito
     productos.forEach(producto => {
@@ -190,7 +196,7 @@ document.querySelectorAll('.producto a').forEach(link => {
         const productImage = link.querySelector('img');
         
         // Agregar clase de transición
-        productImage.style.transition = 'opacity 0.1s ease'; // Tiempo de transición de 0.3 segundos
+        productImage.style.transition = 'opacity 0.3s ease'; // Tiempo de transición de 0.3 segundos
 
         // Redirigir a la página después de la animación
         setTimeout(() => {

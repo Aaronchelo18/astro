@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/astro-logo.jpg">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/details/details-product.css">
+    <link rel="stylesheet" href="/details/gorras-deportivas/carrito.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -72,6 +72,25 @@
             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
         </ul>
     </footer>
+
+      <!-- Contenedor del panel del carrito -->
+      <div id="cart-panel" class="cart-panel">
+        <div class="cart-header">
+        <h2>Tu Carrito</h2>
+        <span id="cerrar-carrito">&times;</span>
+    </div>
+        <div id="cart-items-container">
+            <!-- Los productos agregados se mostrarán aquí -->
+        </div>
+        <div class="cart-footer">
+            <p>Total: <span id="cart-total">S/0.00</span></p>
+            <button id="checkout">Pagar</button>
+        </div>
+    </div>
+    
+
+
+    
 
     <script src="/details/gorras-deportivas/details-product-gorra.js"></script>
 </body>
