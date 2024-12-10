@@ -272,13 +272,18 @@ header {
     background-color: #e74c3c;
 }
 
+
 /* Footer */
 footer {
-    background-color: #333;
+    position: fixed;
+    bottom: 0; /* Lo coloca en el fondo */
+    left: 0;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    background-color: #000;
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
+    margin: 0; /* Elimina márgenes que puedan generar espacios */
 }
 
 footer .social-links {
@@ -322,4 +327,53 @@ footer .social-links li a {
 .color-option.selected {
     border: 2px solid #333;
     transform: scale(1.2); /* Resalta el color seleccionado */
+}
+
+
+
+
+
+
+/* Estilos para la selección de kilates */
+.kilate-selector {
+    margin-top: 20px;
+}
+
+.kilate-selector label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.kilate-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.kilate-option {
+    width: 40px;  /* Tamaño más pequeño */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;  /* Fondo blanco */
+    border: 2px solid #333;  /* Borde negro */
+    color: #333;  /* Texto negro */
+    font-size: 14px;  /* Tamaño de texto pequeño */
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.kilate-option:hover {
+    transform: scale(1.1);  /* Efecto al pasar el ratón */
+    background-color: #333;  /* Fondo oscuro al pasar el ratón */
+    color: #fff;  /* Texto blanco */
+}
+
+.kilate-option.selected {
+    background-color: #333;  /* Fondo oscuro al seleccionar */
+    color: #fff;  /* Texto blanco */
+    transform: scale(1.2);  /* Aumenta el tamaño al seleccionar */
 }
