@@ -180,3 +180,21 @@ document.addEventListener('DOMContentLoaded', () => {
         carritoPanel.classList.remove('active');
     });
 });
+
+
+document.querySelectorAll('.producto a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Evitar la acción de clic predeterminada
+
+        // Animar la opacidad del contenedor de la imagen antes de la redirección
+        const productImage = link.querySelector('img');
+        
+        // Agregar clase de transición
+        productImage.style.transition = 'opacity 0.1s ease'; // Tiempo de transición de 0.3 segundos
+
+        // Redirigir a la página después de la animación
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, 300); // Sincroniza con la duración de la animación
+    });
+});
