@@ -10,6 +10,7 @@ body {
     font-size: 14px;
     background-color: #fff; /* Fondo blanco */
     color: #333; /* Texto negro */
+    scroll-behavior: smooth; /* Suaviza el desplazamiento entre secciones */
 }
 
 h1, h2, h3, p {
@@ -63,10 +64,7 @@ header {
 /* Hero Section */
 #hero {
     background-color: #f0f0f0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
 .hero-content {
@@ -399,6 +397,18 @@ footer .social-links a:hover {
     font-size: 14px;
     font-weight: bold;
     min-width: 20px;
+    text-align: center;
+}
+
+
+
+section {
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     text-align: center;
 }
 

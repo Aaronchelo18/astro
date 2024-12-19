@@ -119,6 +119,18 @@ header {
 }
 
 
+
+
+.cart-panel .cart-items {
+    flex-grow: 1;
+    overflow-y: auto; /* Permite el scroll cuando hay muchos productos */
+    max-height: 350px; /* Limita la altura máxima de los productos */
+    margin-bottom: 20px; /* Espacio entre los productos y el footer */
+}
+
+
+
+
 .cart-panel h2 {
     text-align: center;
     font-size: 22px;
